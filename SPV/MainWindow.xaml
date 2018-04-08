@@ -16,5 +16,6 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Button Name="Test" Grid.Row="1" Grid.Column="1">HelloButton!</Button>
+        <Button Name="SecondButton" Grid.Row="0" Grid.Column="0" Width="20">!</Button>
     </Grid>
 </Window>
