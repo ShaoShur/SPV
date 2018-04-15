@@ -4,8 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SPV"
+        xmlns:vm="clr-namespace:SPV.ViewModels"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
+    
+    <Window.DataContext>
+        <vm:MainViewModel></vm:MainViewModel>
+    </Window.DataContext>
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -15,7 +21,12 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button Name="Test" Grid.Row="1" Grid.Column="1">HelloButton!</Button>
-        <Button Name="SecondButton" Grid.Row="0" Grid.Column="0" Width="20">!</Button>
+        <Button Command="{Binding ClickAdd}" Name="Test" Grid.Row="1" Grid.Column="1" >Click me!</Button>
+        <TextBlock 
+            Grid.Row="0" 
+            Grid.Column="0"
+            HorizontalAlignment ="Center"
+            VerticalAlignment="Center"
+            Text="{Binding Clicks}"/>
     </Grid>
 </Window>
